@@ -12,14 +12,19 @@
     <script type="text/babel">
         const root = document.getElementById("root");
         function App() {
-        const [counter, modifier] = React.useState(0);
-        return (
-        <div>
-            <h3>Total clicks: {counter}</h3>
-            <button>Click me</button>
-        </div>
-     );
-        }        
-       ReactDOM.render(<App />, root);
+            const [counter, setCounter] = React.useState(0);
+            const onClick = () => {
+                setCounter(counter + 1);
+            };
+            console.log("renderde");
+            console.log(counter);
+            return (
+                <div>
+                    <h3>Total clicks: {counter}</h3>
+                    <button onClick={onClick}>Click me</button>
+                </div>
+            );
+        }
+        ReactDOM.render(<App/>, root);
     </script>
 </html>
